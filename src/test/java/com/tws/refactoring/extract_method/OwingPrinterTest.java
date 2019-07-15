@@ -27,11 +27,11 @@ public class OwingPrinterTest {
 
     @Test
     public void should_print_banner_and_detail_given_given_call_print_banner() {
-        OwingPrinter owingPrinter=new OwingPrinter();
-        List<Order> items=new ArrayList<>();
+        OwingPrinter owingPrinter = new OwingPrinter();
+        List<Order> items = new ArrayList<>();
         items.add(new Order(1.00));
-        owingPrinter.printOwing("xu",items);
-        String expectedStr="*****************************\r\n" +
+        owingPrinter.printOwing("xu", items);
+        String expectedStr = "*****************************\r\n" +
                 "****** Customer totals ******\r\n" +
                 "*****************************\r\n" +
                 "name: xu\r\n" +

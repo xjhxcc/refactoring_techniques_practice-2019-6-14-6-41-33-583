@@ -10,20 +10,22 @@ public class OwingPrinter {
         Iterator<Order> elements = orders.iterator();
         double outstanding = 0.0;
         printBanner();
-        // print owings
+        outstanding=caculateOrderAmount(elements,outstanding);
+        printDetail("name: "+name,"amount: " + outstanding);
+    }
+    private double caculateOrderAmount(Iterator<Order> elements,double outstanding){
         while (elements.hasNext()) {
-            Order each = (Order) elements.next();
+            Order each = elements.next();
             outstanding += each.getAmount();
         }
-
-        // print details
-        System.out.println("name: " + name);
-        System.out.println("amount: " + outstanding);
+        return outstanding;
     }
-
-    void printBanner() {
-        System.out.println("*****************************");
-        System.out.println("****** Customer totals ******");
+    private void printDetail(String str1,String str2){
+        System.out.println(str1);
+        System.out.println(str2);
+    }
+    private void printBanner() {
+        printDetail("*****************************","****** Customer totals ******");
         System.out.println("*****************************");
     }
 }
